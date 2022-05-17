@@ -4,6 +4,12 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
+const StyledSlide = styled(ReactSlider)`
+  .slick-track {
+    display: flex;
+  }
+`;
+
 const ArrowBtn = styled.button<{ pos?: "left" | "right" }>`
   padding: 16px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
@@ -62,7 +68,7 @@ interface Props {
   children?: ReactNode;
 }
 const Slider: React.FC<Props> = ({ settings = DEFAULT_SETTINGS, children }) => (
-  <ReactSlider {...settings}>{children}</ReactSlider>
+  <StyledSlide {...settings}>{children}</StyledSlide>
 );
 
 export default Slider;

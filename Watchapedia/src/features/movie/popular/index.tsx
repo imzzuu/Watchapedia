@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import useNowPlayingMovie from "./useNowPlayingMovie";
+import usePopularMovie from "./usePopularMovie";
 import Slider from "../../../components/slider";
 import Card from "../../../components/card";
 
@@ -15,13 +15,13 @@ const Title = styled.h4`
   padding: 12px 0 14px;
 `;
 
-const NowPlayingSection: React.FC = () => {
-  const { data, isLoading } = useNowPlayingMovie();
+const PopularSection: React.FC = () => {
+  const { data, isLoading } = usePopularMovie();
   const getYear = (date: string) => date.split("-")[0];
 
   return (
     <Base>
-      <Title>현재 상영작</Title>
+      <Title>인기 상영작</Title>
       {isLoading || !data ? (
         <div>Loading...</div>
       ) : (
@@ -42,4 +42,4 @@ const NowPlayingSection: React.FC = () => {
   );
 };
 
-export default NowPlayingSection;
+export default PopularSection;
